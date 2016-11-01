@@ -1,0 +1,6 @@
+E:\C# programs, projects\QuartoAttempt\QuartoAttempt\bin\Debug\QuartoAttempt.exe.config
+E:\C# programs, projects\QuartoAttempt\QuartoAttempt\bin\Debug\QuartoAttempt.exe
+E:\C# programs, projects\QuartoAttempt\QuartoAttempt\bin\Debug\QuartoAttempt.pdb
+E:\C# programs, projects\QuartoAttempt\QuartoAttempt\obj\Debug\QuartoAttempt.csprojResolveAssemblyReference.cache
+E:\C# programs, projects\QuartoAttempt\QuartoAttempt\obj\Debug\QuartoAttempt.exe
+E:\C# programs, projects\QuartoAttempt\QuartoAttempt\obj\Debug\QuartoAttempt.pdb
