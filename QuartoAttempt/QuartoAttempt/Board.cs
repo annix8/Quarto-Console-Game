@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace QuartoAttempt
@@ -19,22 +20,25 @@ namespace QuartoAttempt
         // initialize all of the figures
         Figure[] figures = new Figure[16]
          {
-            new Figure() {height = false, color = false, hole = false , type = false },
-            new Figure() {height = false, color = false, hole = false , type = false },
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } ,
-            new Figure() {height = false, color = false, hole = false , type = false } 
+             // white figures
+            new Figure() {height = "tall", color = "white", hole = "no" , type = "round" },
+            new Figure() {height = "short", color = "white", hole = "no" , type = "round" },
+            new Figure() {height = "tall", color = "white", hole = "yes" , type = "round" } ,
+            new Figure() {height = "short", color = "white", hole = "yes" , type = "round" } ,
+            new Figure() {height = "tall", color = "white", hole = "no" , type = "square" } ,
+            new Figure() {height = "short", color = "white", hole = "no" , type = "square" } ,
+            new Figure() {height = "tall", color = "white", hole = "yes" , type = "square" } ,
+            new Figure() {height = "short", color = "white", hole = "yes" , type = "square" } ,
+
+            // black figures
+            new Figure() {height = "tall", color = "black", hole = "no" , type = "round" } ,
+            new Figure() {height = "short", color = "black", hole = "no" , type = "round" } ,
+            new Figure() {height = "tall", color = "black", hole = "yes" , type = "round" } ,
+            new Figure() {height = "short", color = "black", hole = "yes" , type = "round" } ,
+            new Figure() {height = "tall", color = "black", hole = "no" , type = "square" } ,
+            new Figure() {height = "short", color = "black", hole = "no" , type = "square" } ,
+            new Figure() {height = "tall", color = "black", hole = "yes" , type = "square" } ,
+            new Figure() {height = "short", color = "black", hole = "yes" , type = "square" } 
 
         };
 
@@ -43,16 +47,26 @@ namespace QuartoAttempt
         
             int x = place / 4;
             int y = place % 4;
+            // checks if there is a figure on the current position
             if(positions[x][y] != null)
             {
+                Console.WriteLine("choose another position");
+                Thread.Sleep(1000);
                 return;
             }
             else
             {
+                // checks if the figure is already used
+                if(figures[figureType] == null)
+                {
+                    Console.WriteLine("This figure is already on the board, choose another one");
+                    Thread.Sleep(2000);
+                    return;
+                }
                 positions[x][y] = figures[figureType];
+                figures[figureType] = null;
             }
            
-
 
 
         }
@@ -111,11 +125,13 @@ namespace QuartoAttempt
 
         public bool checkAll(Figure a, Figure b, Figure c, Figure d)
         {
+            // checks if the other positions of the board are empty (no figures on them)          
             if (a == null || b == null || c == null || d == null)
             {
                 return false;
             }
 
+            // checks if there are 4 figures next to each other with similiar stats
             if(a.height == b.height && a.height == c.height && a.height == d.height)
             {
                 return true;
@@ -137,7 +153,7 @@ namespace QuartoAttempt
             }
 
 
-
+            // if there arent any conditions met, that means that there isnt a winner
             return false;
         }
 

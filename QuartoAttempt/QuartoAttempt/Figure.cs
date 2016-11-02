@@ -9,9 +9,9 @@ namespace QuartoAttempt
     class Figure
     {
        public char figureSign = 'X';
-       public bool height = false;
-       public bool hole = false;
-       public bool color = false;
-       public bool type = false;
+       public string height = "";
+       public string hole = "";
+       public string color = "";
+       public string type = "";
     }
 }

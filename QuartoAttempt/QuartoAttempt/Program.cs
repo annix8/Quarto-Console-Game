@@ -14,15 +14,20 @@ namespace QuartoAttempt
 
             while (true)
             {
+                // clears the console of the previous (if any) inputs
                 Console.Clear();
-                //input board draw method here
+                // draws the board
                 myBoard.drawBoard();
                 Console.Write("Choose a place: ");
                 int currentPlace = int.Parse(Console.ReadLine());
                 Console.Write("Choose a figure: ");
                 int currentFigure = int.Parse(Console.ReadLine());
 
+                // puts a figure on the board
                 myBoard.putFigure(currentPlace, currentFigure);
+
+                // checks if there are any winning conditions and if any are found 
+                // it stops the game
                 if(myBoard.checkGame())
                 {
                     break;
