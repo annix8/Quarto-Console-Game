@@ -17,18 +17,18 @@ namespace QuartoAttempt
                 // clears the console of the previous (if any) inputs
                 Console.Clear();
                 // draws the board
-                myBoard.drawBoard();
+                myBoard.DrawBoard();
                 Console.Write("Choose a place: ");
                 int currentPlace = int.Parse(Console.ReadLine());
                 Console.Write("Choose a figure: ");
                 int currentFigure = int.Parse(Console.ReadLine());
 
                 // puts a figure on the board
-                myBoard.putFigure(currentPlace, currentFigure);
+                myBoard.PutFigure(currentPlace, currentFigure);
 
                 // checks if there are any winning conditions and if any are found 
                 // it stops the game
-                if(myBoard.checkGame())
+                if(myBoard.CheckGame())
                 {
                     break;
                 }

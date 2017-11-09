@@ -38,17 +38,16 @@ namespace QuartoAttempt
             new Figure() {height = "tall", color = "black", hole = "no" , type = "square" } ,
             new Figure() {height = "short", color = "black", hole = "no" , type = "square" } ,
             new Figure() {height = "tall", color = "black", hole = "yes" , type = "square" } ,
-            new Figure() {height = "short", color = "black", hole = "yes" , type = "square" } 
-
+            new Figure() {height = "short", color = "black", hole = "yes" , type = "square" }
         };
 
-        public void putFigure(int place, int figureType)
+        public void PutFigure(int place, int figureType)
         {
-        
+
             int x = place / 4;
             int y = place % 4;
             // checks if there is a figure on the current position
-            if(positions[x][y] != null)
+            if (positions[x][y] != null)
             {
                 Console.WriteLine("choose another position");
                 Thread.Sleep(1000);
@@ -57,7 +56,7 @@ namespace QuartoAttempt
             else
             {
                 // checks if the figure is already used
-                if(figures[figureType] == null)
+                if (figures[figureType] == null)
                 {
                     Console.WriteLine("This figure is already on the board, choose another one");
                     Thread.Sleep(2000);
@@ -66,25 +65,20 @@ namespace QuartoAttempt
                 positions[x][y] = figures[figureType];
                 figures[figureType] = null;
             }
-           
-
-
         }
 
-        public bool checkGame()
+        public bool CheckGame()
         {
             // checks the rows
             for (int i = 0; i < positions.Length; i++)
             {
                 Figure[] result = positions[i];
-                bool checkedRows = checkAll(result[0], result[1], result[2], result[3]);
+                bool checkedRows = CheckAll(result[0], result[1], result[2], result[3]);
                 if (checkedRows)
                 {
                     Console.WriteLine("winner");
                     return true;
-                    
                 }
-
             }
 
             // checks the cols
@@ -95,7 +89,7 @@ namespace QuartoAttempt
                 {
                     result[j] = positions[j][i];
                 }
-                bool checkedRows = checkAll(result[0], result[1], result[2], result[3]);
+                bool checkedRows = CheckAll(result[0], result[1], result[2], result[3]);
                 if (checkedRows)
                 {
                     Console.WriteLine("winner");
@@ -104,7 +98,7 @@ namespace QuartoAttempt
             }
 
             // checks the main diagonal
-            bool diagonalResult = checkAll(positions[0][0], positions[1][1], positions[2][2], positions[3][3]);
+            bool diagonalResult = CheckAll(positions[0][0], positions[1][1], positions[2][2], positions[3][3]);
             if (diagonalResult)
             {
                 Console.WriteLine("winner");
@@ -112,18 +106,17 @@ namespace QuartoAttempt
             }
 
             // checks the secondary diagonal
-            bool otherDiagonalResult = checkAll(positions[0][3], positions[1][2], positions[2][1], positions[3][0]);
+            bool otherDiagonalResult = CheckAll(positions[0][3], positions[1][2], positions[2][1], positions[3][0]);
             if (otherDiagonalResult)
             {
                 Console.WriteLine("winner");
                 return true;
             }
 
-
             return false;
         }
 
-        public bool checkAll(Figure a, Figure b, Figure c, Figure d)
+        public bool CheckAll(Figure a, Figure b, Figure c, Figure d)
         {
             // checks if the other positions of the board are empty (no figures on them)          
             if (a == null || b == null || c == null || d == null)
@@ -132,7 +125,7 @@ namespace QuartoAttempt
             }
 
             // checks if there are 4 figures next to each other with similiar stats
-            if(a.height == b.height && a.height == c.height && a.height == d.height)
+            if (a.height == b.height && a.height == c.height && a.height == d.height)
             {
                 return true;
             }
@@ -153,11 +146,11 @@ namespace QuartoAttempt
             }
 
 
-            // if there arent any conditions met, that means that there isnt a winner
+            // if there arent any conditions met, that means that there isn't a winner
             return false;
         }
 
-        public void drawBoard()
+        public void DrawBoard()
         {
             Console.WriteLine("     |     |     |     |");
             Console.WriteLine("  {0}  |  {1}  |  {2}  |  {3}  |", 0, 1, 2, 3);
