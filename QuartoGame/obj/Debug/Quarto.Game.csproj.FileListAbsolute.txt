@@ -1,0 +1,7 @@
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\bin\Debug\QuartoAttempt.exe.config
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\bin\Debug\QuartoAttempt.exe
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\bin\Debug\QuartoAttempt.pdb
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\obj\Debug\Quarto.Game.csprojResolveAssemblyReference.cache
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\obj\Debug\Quarto.Game.csproj.CoreCompileInputs.cache
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\obj\Debug\QuartoAttempt.exe
+C:\Users\Mario\Desktop\asd\Quarto-Console-Game-Simple-Logic\QuartoGame\obj\Debug\QuartoAttempt.pdb
